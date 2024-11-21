@@ -1,0 +1,94 @@
+/* src/index.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --neon-green: #39ff14;
+    --cyber-pink: #ff10f0;
+    --electric-blue: #0ff0fc;
+    --meme-yellow: #ffe600;
+
+    --background: #13151a;
+    --foreground: #ffffff;
+    --card: #1c1f26;
+    --card-hover: #262a34;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--neon-green)] text-black font-bold py-2 px-4 rounded-lg 
+           hover:brightness-110 transition-all duration-200 shadow-[0_0_15px_rgba(57,255,20,0.5)];
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--cyber-pink)] text-white font-bold py-2 px-4 rounded-lg 
+           hover:brightness-110 transition-all duration-200 shadow-[0_0_15px_rgba(255,16,240,0.5)];
+  }
+
+  .card {
+    @apply bg-[var(--card)] rounded-lg border border-gray-700 p-6 
+           hover:border-[var(--neon-green)] transition-colors duration-200;
+  }
+
+  .card-stats {
+    @apply card grid grid-cols-2 gap-4;
+  }
+
+  .stats-value {
+    @apply text-2xl font-bold text-[var(--neon-green)];
+  }
+
+  .stats-label {
+    @apply text-sm text-gray-400;
+  }
+
+  .glow-text {
+    @apply animate-pulse;
+    text-shadow: 0 0 10px currentColor;
+  }
+}
+
+@layer utilities {
+  .neon-border {
+    @apply border-2 border-[var(--neon-green)] shadow-[0_0_15px_rgba(57,255,20,0.3)];
+  }
+
+  .cyber-border {
+    @apply border-2 border-[var(--cyber-pink)] shadow-[0_0_15px_rgba(255,16,240,0.3)];
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[var(--background)];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full hover:bg-gray-600;
+}
