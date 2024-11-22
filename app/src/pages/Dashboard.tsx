@@ -3,8 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Sword, Trophy, Coins, TrendingUp } from "lucide-react";
 import { mockApi } from "../lib/mock-data";
+import {
+  StatCardProps,
+  ActiveBattleCardProps,
+  Battle,
+  Player,
+} from "../lib/types";
 
-const StatCard = ({ icon: Icon, label, value, color }) => (
+const StatCard = ({ icon: Icon, label, value, color }: StatCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -20,7 +26,7 @@ const StatCard = ({ icon: Icon, label, value, color }) => (
   </motion.div>
 );
 
-const ActiveBattleCard = ({ battle }) => (
+const ActiveBattleCard = ({ battle }: ActiveBattleCardProps) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -47,21 +53,23 @@ const ActiveBattleCard = ({ battle }) => (
 );
 
 export default function Dashboard() {
-  const { data: player } = useQuery({
+  const { data: player } = useQuery<Player>({
     queryKey: ["currentPlayer"],
     queryFn: () => mockApi.getCurrentPlayer(),
   });
 
-  const { data: battles } = useQuery({
+  const { data: battles } = useQuery<Battle[]>({
     queryKey: ["activeBattles"],
     queryFn: () => mockApi.getActiveBattles(),
   });
 
-  const [selectedTimeRange, setSelectedTimeRange] = useState("24h");
+  const [selectedTimeRange, setSelectedTimeRange] = useState<
+    "24h" | "7d" | "30d"
+  >("24h");
 
   if (!player || !battles) return <div>Loading...</div>;
 
-  const stats = [
+  const stats: StatCardProps[] = [
     {
       icon: Trophy,
       label: "Total Wins",
@@ -117,7 +125,9 @@ export default function Dashboard() {
           <h2 className="text-2xl font-bold">Active Battles</h2>
           <select
             value={selectedTimeRange}
-            onChange={(e) => setSelectedTimeRange(e.target.value)}
+            onChange={(e) =>
+              setSelectedTimeRange(e.target.value as "24h" | "7d" | "30d")
+            }
             className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2"
           >
             <option value="24h">Last 24 hours</option>

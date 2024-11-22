@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 export interface Player {
   id: string;
   name: string;
@@ -16,4 +17,15 @@ export interface Battle {
   stakes: number;
   winner?: Player;
   startTime: Date;
+}
+
+export interface StatCardProps {
+  icon: LucideIcon;
+  label: string;
+  value: string | number;
+  color: string;
+}
+
+export interface ActiveBattleCardProps {
+  battle: Battle;
 }
