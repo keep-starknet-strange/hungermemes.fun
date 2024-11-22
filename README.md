@@ -8,6 +8,7 @@
 4. [Battle Arena Details](#battle-arena-details)
 5. [Technical Architecture](#technical-architecture)
 6. [Artistic Direction and Brand Design](#artistic-direction-and-brand-design)
+7. [ELI5](#eli5)
 
 ---
 
@@ -37,7 +38,7 @@
 
 Hunger Memes is set in a whimsical universe where various memecoin mascots come to life. Players embody these mascots, battling it out in arenas that reflect the humorous and unpredictable nature of meme culture.
 
-### Unique Selling Proposition
+### Product Features
 
 - **Memecoin Integration**: Use any supported memecoin to participate, giving real utility to tokens.
 - **On-Chain Battles**: Fully decentralized gameplay ensures transparency and fairness.
@@ -196,5 +197,35 @@ Hunger Memes is set in a whimsical universe where various memecoin mascots come 
 - **Interactive Elements**:
   - **Hover Effects**: Visual feedback on interactive elements.
   - **Animations**: Smooth transitions and engaging battle effects.
+
+---
+
+## ELI5
+
+Imagine you have a bunch of special digital coins with funny dog pictures on them (like Dogecoin). Now, instead of just keeping these coins in your digital piggy bank, you can use them to play an exciting game!
+
+In Hunger Memes, you're like a player in a video game tournament, but with a twist - you're playing as your favorite meme characters (like the Doge dog or Shiba Inu). Here's how it works:
+
+1. First, you pick your favorite meme character and put some of your coins in as your "entry ticket"
+2. Then you can:
+   - Fight one-on-one against another player
+   - Join a big battle with lots of players
+   - Enter special tournaments where lots of people compete to be the champion
+
+During the battles:
+
+- You and your opponent take turns, kind of like playing Pokémon
+- You get special points called "Action Points" to do things like attack or defend
+- You can use special moves or get power-ups to help you win
+- The last player standing gets to keep all the coins that were put in!
+
+The really cool part is that everything happens on a special computer system (called Starknet) that makes sure nobody can cheat. When you win battles, you:
+
+- Get more coins
+- Move up on a special scoreboard
+- Can earn cool badges and titles
+- Might even become the champion if you're really good!
+
+It's like playing a video game, collecting trading cards, and having a piggy bank all rolled into one fun package! The better you play, the more coins you can win, and the higher you'll climb on the leaderboard.
 
 ---
